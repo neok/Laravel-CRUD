@@ -1,1 +1,3 @@
-<h1>{{$test}} {{$special}}</h1>
+<h1>{{$title}}</h1>
+<p>We offer: <span>{{$offer}}</span></p>
+<p>Data: <span>{{$serviceData}}</span></p>

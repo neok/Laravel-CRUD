@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,6 @@ Route::get('/', function () {
 });
 
 Route::get('/simple', 'SimpleController@getListItems');
+Route::get('/cache', function () {
+    return Cache::get('test');
+});

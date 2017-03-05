@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Controllers\SimpleController;
+use App\Service\UserService;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,7 +30,9 @@ class CrudServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->when(SimpleController::class)
-            ->needs('$special')
-            ->give('something special');
+            ->needs('$offer')
+            ->give('1000$ for free!!!');
+        $this->app->when(SimpleController::class)
+            ->give(new UserService());
     }
 }
