@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/simple', 'SimpleController@getListItems');
+Route::get('/user/{id}', 'SimpleController@getUser');
+Route::post('/user', 'SimpleController@createUser');
 Route::get('/cache', function () {
     return Cache::get('test');
 });
