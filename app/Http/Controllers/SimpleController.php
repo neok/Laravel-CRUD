@@ -74,4 +74,21 @@ class SimpleController extends Controller
 
         return new Response('OK');
     }
+
+    /**
+     * @param         $id
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function updateUser($id, Request $request)
+    {
+        /** @var User $user */
+        $user = User::findOrFail($id);
+        $user->username = $request->get('username');
+
+        $user->save();
+
+        return new Response(null, 204);
+    }
 }

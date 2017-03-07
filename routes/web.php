@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/simple', 'SimpleController@getListItems');
 Route::get('/user/{id}', 'SimpleController@getUser');
 Route::post('/user', 'SimpleController@createUser');
+Route::patch('/user/{id}', 'SimpleController@updateUser');
 Route::get('/cache', function () {
     return Cache::get('test');
 });
